@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>EcoCuritiba — Ecopontos</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    ></script>
+    <script defer src="data.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="./" class="brand"><span>♻</span>eco<b>curitiba</b></a
+      ><small>Projeto integrador · Curitiba, PR</small>
+    </header>
+    <main>
+      <aside>
+        <div class="intro">
+          <small>UMA CIDADE MAIS SUSTENTÁVEL</small>
+          <h1>Seu descarte tem um lugar certo.</h1>
+          <p>
+            Encontre um ecoponto em Curitiba e dê o destino certo ao que não usa
+            mais.
+          </p>
+          <input
+            id="search"
+            type="search"
+            aria-label="Buscar por nome, bairro ou rua"
+            placeholder="Busque por nome, bairro ou rua"
+          />
+        </div>
+        <div class="heading">
+          <h2>Ecopontos <span id="count"></span></h2>
+          <button id="reset">Ver todos no mapa</button>
+        </div>
+        <div id="results" aria-live="polite"></div>
+        <div class="source">
+          Localizações:
+          <a
+            href="https://geocuritiba.ippuc.org.br/server/rest/services/Publico_GeoCuritiba_Equipamentos_Urbanos/MapServer/116"
+            target="_blank"
+            rel="noopener"
+            >GeoCuritiba / IPPUC ↗</a
+          ><br />Base consultada em 17/09/2026. Confirme o atendimento no 156.
+        </div>
+      </aside>
+      <section class="map-section" aria-label="Mapa dos ecopontos">
+        <div id="map"></div>
+        <div class="map-label">
+          ◎ <b>Curitiba</b><small>Paraná, Brasil</small>
+        </div>
+        <div class="map-note">♻ Selecione um ponto para ver o endereço</div>
+        <p id="message" role="status" hidden></p>
+      </section>
+    </main>
+    <footer>
+      Projeto acadêmico independente ·
+      <a
+        href="https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716"
+        target="_blank"
+        rel="noopener"
+        >Orientações de descarte ↗</a
+      >
+    </footer>
+  </body>
+</html>
